@@ -12,6 +12,8 @@ as well as attempt to verify compilation with `md5` , `sha1`, `sha256`
 this should only be for windows 2.204 & android 2.205
 
 For now feel free to send me C++ files if needed. 
+
+## Hashes For Libcocos2d.dll
 ```
 [md5]:  f727d33f2c0376e8ce5d97687f45cf2d
 [sha1]:  6d077d6e13f7bf85baf158236b198daefe2bf7d2
