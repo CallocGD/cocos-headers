@@ -11,3 +11,8 @@ Unlike the other branch I plan to make this one generate a `.dll` file and `.lib
 as well as attempt to verify compilation with `md5` , `sha1`, `sha256`
 this should only be for windows 2.204 & android 2.205
 
+For now feel free to send me C++ files if needed. 
+
+hashes for the dll file are coming soon...
+
+
