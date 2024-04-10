@@ -7,6 +7,10 @@ inside of modern VSCode Ides such as CCPoint, however I will be strictly using t
 while reverse engineering. Feel free to update and send me pull requests I love it 
 when anyone contributes, wants to contribute or even give me ideas.
 
+# Differences from HJFod's Version
+- I (Calloc) have Added in the additional Fmod and Fmt headers for those wanting to decompile gd on their own.
+This will also be in use for an auto-creation tool I am working on where these things are already being needed and included
+
 Unlike the other branch I plan to make this one generate a `libcocos2d.dll` file and `libcocos2d.lib` file 
 as well as attempt to verify compilation with `md5` , `sha1`, `sha256`
 this should only be for windows 2.204 & android 2.205
