@@ -42,7 +42,7 @@ NS_CC_BEGIN
 
 class CCCamera;
 class CCGridBase;
-class CCPoint;
+class cocos2d::CCPoint;
 class CCTouch;
 class CCAction;
 class CCRGBAProtocol;
@@ -295,7 +295,7 @@ public:
     /**
      * Changes the position (x,y) of the node in OpenGL coordinates
      *
-     * Usually we use ccp(x,y) to compose CCPoint object.
+     * Usually we use ccp(x,y) to compose cocos2d::CCPoint object.
      * The original point (0,0) is at the left-bottom corner of screen.
      * For example, this codesnip sets the node in the center of screen.
      * @code
@@ -306,25 +306,25 @@ public:
      * @param position  The position (x,y) of the node in OpenGL coordinates
      * @js NA
      */
-    virtual void setPosition(const CCPoint &position);
+    virtual void setPosition(const cocos2d::CCPoint &position);
     /**
      * Gets the position (x,y) of the node in OpenGL coordinates
      * 
-     * @see setPosition(const CCPoint&)
+     * @see setPosition(const cocos2d::CCPoint&)
      *
      * @return The position (x,y) of the node in OpenGL coordinates
      */
-    virtual const CCPoint& getPosition();
+    virtual const cocos2d::CCPoint& getPosition();
     /**
      * Sets position in a more efficient way.
      *
-     * Passing two numbers (x,y) is much efficient than passing CCPoint object.
+     * Passing two numbers (x,y) is much efficient than passing cocos2d::CCPoint object.
      * This method is binded to lua and javascript. 
      * Passing a number is 10 times faster than passing a object from lua to c++
      *
      * @code
      * // sample code in lua
-     * local pos  = node::getPosition()  -- returns CCPoint object from C++
+     * local pos  = node::getPosition()  -- returns cocos2d::CCPoint object from C++
      * node:setPosition(x, y)            -- pass x, y coordinate to C++
      * @endcode
      *
@@ -334,7 +334,7 @@ public:
      */
     virtual void setPosition(float x, float y);
     /**
-     * Gets position in a more efficient way, returns two number instead of a CCPoint object
+     * Gets position in a more efficient way, returns two number instead of a cocos2d::CCPoint object
      *
      * @see setPosition(float, float)
      */
@@ -400,15 +400,15 @@ public:
      *
      * @param anchorPoint   The anchor point of node.
      */
-    virtual void setAnchorPoint(const CCPoint& anchorPoint);
+    virtual void setAnchorPoint(const cocos2d::CCPoint& anchorPoint);
     /** 
      * Returns the anchor point in percent.
      *
-     * @see setAnchorPoint(const CCPoint&)
+     * @see setAnchorPoint(const cocos2d::CCPoint&)
      *
      * @return The anchor point of node.
      */
-    virtual const CCPoint& getAnchorPoint();
+    virtual const cocos2d::CCPoint& getAnchorPoint();
     /**
      * Returns the anchorPoint in absolute pixels.
      * 
@@ -417,7 +417,7 @@ public:
      *
      * @return The anchor point in absolute pixels.
      */
-    virtual const CCPoint& getAnchorPointInPoints();
+    virtual const cocos2d::CCPoint& getAnchorPointInPoints();
     
     /**
      * Sets the untransformed size of the node.
@@ -1014,7 +1014,7 @@ public:
      * @return A "local" axis aligned boudning box of the node.
      * @js getBoundingBox
      */
-    CCRect boundingBox(void);
+    cocos2d::CCRect boundingBox(void);
 
     /// @{
     /// @name Actions
@@ -1282,34 +1282,34 @@ public:
     /** 
      * Converts a Point to node (local) space coordinates. The result is in Points.
      */
-    CCPoint convertToNodeSpace(const CCPoint& worldPoint);
+    cocos2d::CCPoint convertToNodeSpace(const cocos2d::CCPoint& worldPoint);
     
     /** 
      * Converts a Point to world space coordinates. The result is in Points.
      */
-    CCPoint convertToWorldSpace(const CCPoint& nodePoint);
+    cocos2d::CCPoint convertToWorldSpace(const cocos2d::CCPoint& nodePoint);
     
     /** 
      * Converts a Point to node (local) space coordinates. The result is in Points.
      * treating the returned/received node point as anchor relative.
      */
-    CCPoint convertToNodeSpaceAR(const CCPoint& worldPoint);
+    cocos2d::CCPoint convertToNodeSpaceAR(const cocos2d::CCPoint& worldPoint);
     
     /** 
      * Converts a local Point to world space coordinates.The result is in Points.
      * treating the returned/received node point as anchor relative.
      */
-    CCPoint convertToWorldSpaceAR(const CCPoint& nodePoint);
+    cocos2d::CCPoint convertToWorldSpaceAR(const cocos2d::CCPoint& nodePoint);
 
     /** 
-     * convenience methods which take a CCTouch instead of CCPoint
+     * convenience methods which take a CCTouch instead of cocos2d::CCPoint
      */
-    CCPoint convertTouchToNodeSpace(CCTouch * touch);
+    cocos2d::CCPoint convertTouchToNodeSpace(CCTouch * touch);
 
     /** 
      * converts a CCTouch (world coordinates) into a local coordinate. This method is AR (Anchor Relative).
      */
-    CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
+    cocos2d::CCPoint convertTouchToNodeSpaceAR(CCTouch * touch);
     
 	/**
      *  Sets the additional transform.
@@ -1411,7 +1411,7 @@ private:
      * @js NA
      * @lua NA
      */
-    CCPoint convertToWindowSpace(const CCPoint& nodePoint);
+    cocos2d::CCPoint convertToWindowSpace(const cocos2d::CCPoint& nodePoint);
 
 protected:
     float m_fRotationX;                 ///< rotation angle on x-axis
@@ -1422,13 +1422,13 @@ protected:
     
     float m_fVertexZ;                   ///< OpenGL real Z vertex
     
-    CCPoint m_obPosition;               ///< position of the node
+    cocos2d::CCPoint m_obPosition;               ///< position of the node
     
     float m_fSkewX;                     ///< skew angle on x-axis
     float m_fSkewY;                     ///< skew angle on y-axis
     
-    CCPoint m_obAnchorPointInPoints;    ///< anchor point in points
-    CCPoint m_obAnchorPoint;            ///< anchor point normalized (NOT in points)
+    cocos2d::CCPoint m_obAnchorPointInPoints;    ///< anchor point in points
+    cocos2d::CCPoint m_obAnchorPoint;            ///< anchor point normalized (NOT in points)
     
     CCSize m_obContentSize;             ///< untransformed size of the node
     
@@ -1441,12 +1441,19 @@ protected:
     
     CCGridBase *m_pGrid;                ///< a grid
     
-    int m_nZOrder;                      ///< z-order value that affects the draw order
+    /* NOTE: (From Calloc) It seems robtop started screwing with this class 
+     * just a little bit more so I Implemented these new things in */
+
+    /* "Robtop Decided to Move this class member to CCObject, No Clue as to why. 
+    Other than he's trying to make some peformance enhancements" - Calloc */
+    RT_REMOVE(
+        int m_nZOrder; ///< z-order value that affects the draw order
+    );
     
     CCArray *m_pChildren;               ///< array of children nodes
     CCNode *m_pParent;                  ///< weak reference to parent node
     
-    RT_REMOVE(  int m_nTag; )                         ///< a tag. Can be any number you assigned just to identify this node
+    RT_REMOVE(  int m_nTag; );                         ///< a tag. Can be any number you assigned just to identify this node
     
     void *m_pUserData;                  ///< A user assingned void pointer, Can be point to any cpp object
     CCObject *m_pUserObject;            ///< A user assigned CCObject
@@ -1463,6 +1470,10 @@ protected:
     
     bool m_bRunning;                    ///< is running
     
+    RT_ADD(
+        bool m_bRotationTransformDirty; // Robtop Added this in for some reason. I've chosen this name since it's related to rotations somehow
+    );
+
     bool m_bTransformDirty;             ///< transform dirty flag
     bool m_bInverseDirty;               ///< transform dirty flag
     bool m_bAdditionalTransformDirty;   ///< The flag to check whether the additional transform is dirty
@@ -1478,6 +1489,13 @@ protected:
     ccScriptType m_eScriptType;         ///< type of script binding, lua or javascript
     
     CCComponentContainer *m_pComponentContainer;        ///< Dictionary of components
+
+    /* Wow, Way to go Robtop -_- */
+    RT_ADD(
+        bool	m_hasNoIndex; // CCNode has no indexs (aka. Children)
+        bool	m_hasNoManagement;	/// the CCNode In Question has no managment system (still theorizing)
+    );
+
 
 };
 
@@ -1533,12 +1551,12 @@ public:
     virtual bool isOpacityModifyRGB() { return false; };
 
 protected:
-	GLubyte		_displayedOpacity;
+    GLubyte	_displayedOpacity;
     GLubyte     _realOpacity;
-	ccColor3B	_displayedColor;
-    ccColor3B   _realColor;
-	bool		_cascadeColorEnabled;
-    bool        _cascadeOpacityEnabled;
+    ccColor3B	_displayedColor;
+    ccColor3B _realColor;
+    bool _cascadeColorEnabled;
+    bool _cascadeOpacityEnabled;
 };
 
 // end of base_node group
@@ -1547,3 +1565,4 @@ protected:
 NS_CC_END
 
 #endif // __PLATFORM_CCNODE_H__
+
