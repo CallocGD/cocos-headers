@@ -25,5 +25,5 @@ For now feel free to send me C++ files if needed.
 [sha384]:  02ede357068c6364fd1ab0621ed218a5eb6a72253457f1177ddf0dca7e9be823631cb07f28f6d02d0de6835b7c633f18
 [sha512]:  f6ea07958b4cfd9f7ade91576cf2e100515da1bd10e645e432da33b45bb75cdc38faff3266d8db61b764bbce5b5c163252a1f22e97f09c57ae7caa2384d5fb05
 ```
-
-
+## TODOS
+Update To using Geode's cocos2d headers, it's updated and more maintained.
