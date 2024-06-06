@@ -93,6 +93,16 @@ RT_ADD(
     class CCSceneDelegate;
 )
 
+
+RT_ADD(
+    // For Some Reason Someone was too lazy to defien this one so I'll do it...
+
+    class CCSeneDelegate {
+        virtual void willSwitchToScene(cocos2d::CCScene*);
+    }
+);
+
+
 /**
 @brief Class that creates and handle the main Window and manages how
 and when to execute the Scenes.
