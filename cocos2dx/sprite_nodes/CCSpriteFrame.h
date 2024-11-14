@@ -157,6 +157,10 @@ protected:
     CCSize m_obOriginalSizeInPixels;
     CCTexture2D *m_pobTexture;
     std::string  m_strTextureFilename;
+
+public:
+    // I Found This while Decompiling CCPartAnimSprite
+    RT_ADD(std::string m_textureName);
 };
 
 // end of sprite_nodes group
